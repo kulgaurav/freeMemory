@@ -30,10 +30,10 @@ public class freeMemory {
 		    while (iterator.hasNext()) {
 		       String key = iterator.next().toString();
 		       String value = rval.get(key).toString();
-		       int cou=0;
+		       
 		       if (!mySet.add(value))
 		        {
-		    	   cou=1;
+		    	   
 		    	   File file = new File(key);
 		        	
 		    		if(file.delete()){
@@ -43,9 +43,7 @@ public class freeMemory {
 		    		}
 		            iterator.remove();               
 		        }
-		       if(cou==0){
-		    	   System.out.println("No duplicate file in this directory!");
-		       }
+		       
 		       
 		    }
 	   }
