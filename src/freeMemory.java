@@ -27,6 +27,7 @@ public class freeMemory {
 		Iterator iterator = rval.keySet().iterator();
 		   
 		   Set<String> mySet = new HashSet<String>();
+		  
 		    while (iterator.hasNext()) {
 		       String key = iterator.next().toString();
 		       String value = rval.get(key).toString();
@@ -69,6 +70,7 @@ public class freeMemory {
 	         rval.put((String)keys[x],(String)value);
 	      }
 	   }
+	   
 	   deleteDup(rval);
 	
 	}
@@ -93,7 +95,7 @@ public class freeMemory {
 					}
 	        }
 	    }
-	 	
+	    
 	    getDuplicateValues(hmap);
 	    
 	}
