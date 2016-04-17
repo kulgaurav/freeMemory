@@ -51,12 +51,14 @@ public class gui {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 		frame.getContentPane().setForeground(Color.GRAY);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton JBstart = new JButton("Start");
+		JBstart.setBackground(new Color(0, 204, 51));
 		JBstart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				 final File folder = new File(System.getProperty("user.dir"));
@@ -69,10 +71,11 @@ public class gui {
 		           }
 			}
 		});
-		JBstart.setBounds(70, 99, 296, 50);
+		JBstart.setBounds(156, 107, 117, 50);
 		frame.getContentPane().add(JBstart);
 		
 		JButton JBexit = new JButton("Exit");
+		JBexit.setBackground(new Color(255, 51, 51));
 		JBexit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
@@ -80,17 +83,19 @@ public class gui {
 		});
 		JBexit.setBounds(156, 196, 117, 25);
 		frame.getContentPane().add(JBexit);
-		
-		JTextPane txtpnFreememoryRemove = new JTextPane();
-		txtpnFreememoryRemove.setFont(new Font("DejaVu Serif Condensed", Font.BOLD, 16));
-		txtpnFreememoryRemove.setForeground(Color.RED);
-		txtpnFreememoryRemove.setBackground(Color.BLACK);
-		txtpnFreememoryRemove.setText("freeMemory : Remove duplicates from directory");
-		txtpnFreememoryRemove.setBounds(29, 12, 392, 36);
-		frame.getContentPane().add(txtpnFreememoryRemove);
 		lblWarkulock.setFont(new Font("Courier 10 Pitch", Font.BOLD, 10));
 		lblWarkulock.setBounds(375, 239, 180, 33);
 		frame.getContentPane().add(lblWarkulock);
+		
+		JLabel JLtitle = new JLabel("freeMemory");
+		JLtitle.setFont(new Font("Abyssinica SIL", Font.PLAIN, 20));
+		JLtitle.setForeground(new Color(204, 51, 102));
+		JLtitle.setBounds(150, 0, 123, 50);
+		frame.getContentPane().add(JLtitle);
+		
+		JLabel lbltag = new JLabel("Remove duplicates from directory");
+		lbltag.setBounds(109, 34, 263, 50);
+		frame.getContentPane().add(lbltag);
 	}
 	
 	
@@ -114,7 +119,7 @@ public class gui {
 		    	   File file = new File(key);
 		        	
 		    		if(file.delete()){
-		    			String name_with_del=file.getName() + "~ DELETED !";
+		    			String name_with_del=file.getName();
 		    			stock.add(name_with_del);
 		    			//JOptionPane.showMessageDialog(null,file.getName() + " is deleted!");
 		    			flag++;
